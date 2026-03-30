@@ -32,8 +32,16 @@ sharada-engineering-website/
 │   └── style.css       ← Main stylesheet (industrial theme)
 ├── js/
 │   └── main.js         ← Minimal vanilla JavaScript
+├── public/
+│   └── images/         ← All website images (WebP format)
+│       ├── hero-owner.webp
+│       ├── hero-machine.webp
+│       ├── about-workshop.webp
+│       ├── gallery-1.webp … gallery-5.webp
+│       └── owner.webp
 ├── images/
-│   └── README.txt      ← Image naming guide
+│   └── README.txt      ← Legacy image naming guide
+├── convert-images.py   ← Downloads & converts images to public/images/
 └── README.md
 ```
 
@@ -68,13 +76,19 @@ sharada-engineering-website/
 Search for `9XXXXXXXX` in `index.html` and replace with the actual mobile number.
 
 ### 2. Add Real Photos
-Place optimised JPG/PNG images in the `images/` folder (see `images/README.txt` for naming guide).  
-Then update the gallery and about-section placeholders in `index.html` with `<img>` tags:
+Place optimised WebP images in the `public/images/` folder (run `python convert-images.py` to
+download and convert all images automatically).  
+The file names expected are:
 
-```html
-<!-- Example: replace gallery-placeholder div with -->
-<img src="images/lathe-work.jpg" alt="Lathe machining at Sharada Engineering Works, Iritty" loading="lazy" />
-```
+| File | Used in |
+|---|---|
+| `hero-owner.webp` | Hero section – owner/worker photo |
+| `hero-machine.webp` | Hero section – lathe machine photo |
+| `about-workshop.webp` | About section |
+| `gallery-1.webp` … `gallery-5.webp` | Gallery section |
+| `owner.webp` | Owner Details section |
+
+To add a custom owner photo, place it at `public/images/owner.webp`.
 
 ### 3. Google Maps Embed
 The current map embed centres on Iritty town. Replace the `src` URL in the `<iframe>` inside the `#contact` section with the exact Google Maps embed URL for the workshop location.

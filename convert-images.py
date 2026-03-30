@@ -22,10 +22,18 @@ except ImportError:
     print("Pillow is required. Install it with: pip install Pillow")
     sys.exit(1)
 
-IMAGES_DIR = os.path.join(os.path.dirname(__file__), "images")
+IMAGES_DIR = os.path.join(os.path.dirname(__file__), "public", "images")
 WEBP_QUALITY = 82
 
 SOURCES = [
+    (
+        "https://images.unsplash.com/photo-1621905251918-48416bd8575a?auto=format&fit=crop&w=600&h=520&q=80",
+        "hero-owner.webp",
+    ),
+    (
+        "https://images.unsplash.com/photo-1537462715879-360eeb61a0ad?auto=format&fit=crop&w=700&h=260&q=80",
+        "hero-machine.webp",
+    ),
     (
         "https://github.com/user-attachments/assets/73d303c4-1bbe-4aa4-ba79-3b271485cc84",
         "about-workshop.webp",
@@ -79,7 +87,7 @@ def main() -> None:
         original_kb = len(image_data) / 1024
         print(f"  Downloaded {original_kb:.1f} KB")
         convert_to_webp(image_data, output_path, quality=WEBP_QUALITY)
-    print("\nDone. Commit the images/ directory to the repository.")
+    print("\nDone. Commit the public/images/ directory to the repository.")
 
 
 if __name__ == "__main__":
