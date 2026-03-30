@@ -611,41 +611,6 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
 }
 
-/* Scroll hint */
-.hero-scroll-hint {
-  position: absolute;
-  bottom: 2.5rem;
-  left: 50%;
-  transform: translateX(-50%);
-  text-align: center;
-  z-index: 1;
-  animation: fadeUp 1.2s ease 0.5s both;
-}
-
-.hero-scroll-hint span {
-  display: block;
-  font-size: 0.7rem;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.35);
-  margin-bottom: 0.5rem;
-}
-
-.scroll-arrow {
-  width: 18px;
-  height: 18px;
-  border-right: 2px solid var(--color-orange);
-  border-bottom: 2px solid var(--color-orange);
-  transform: rotate(45deg);
-  margin: 0 auto;
-  animation: bounce 1.5s infinite;
-}
-
-@keyframes bounce {
-  0%, 100% { transform: rotate(45deg) translateY(0); }
-  50%       { transform: rotate(45deg) translateY(7px); }
-}
-
 /* ---- Responsive: tablet ---- */
 @media (max-width: 900px) {
   .hero-content {
