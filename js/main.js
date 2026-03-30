@@ -117,21 +117,29 @@
 
   // ── Animate cards on scroll (Intersection Observer) ──────
   const animatedItems = document.querySelectorAll(
-    '.service-card, .machine-card, .gallery-item, .about-grid, .contact-item'
+    '.service-card, .machine-card, .gallery-item, .about-grid, .contact-item, .stat-item'
   );
 
   if ('IntersectionObserver' in window) {
     const observer = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
         if (entry.isIntersecting) {
+          var delay = entry.target.dataset.delay || 0;
+          entry.target.style.animationDelay = delay + 'ms';
           entry.target.style.animation = 'fadeUp 0.6s ease both';
           observer.unobserve(entry.target);
         }
       });
     }, { threshold: ANIMATION_TRIGGER_THRESHOLD });
 
-    animatedItems.forEach(function (el) {
+    animatedItems.forEach(function (el, index) {
       el.style.opacity = '0';
+      // Stagger sibling cards within the same parent container
+      var siblings = el.parentElement ? el.parentElement.children : [];
+      var siblingIndex = Array.prototype.indexOf.call(siblings, el);
+      if (siblingIndex > 0) {
+        el.dataset.delay = siblingIndex * 80;
+      }
       observer.observe(el);
     });
   }
