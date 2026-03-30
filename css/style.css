@@ -226,7 +226,7 @@ h1, h2, h3, h4, h5, h6 {
   width: 100%;
   height: var(--nav-height);
   z-index: 1000;
-  background: rgba(8,11,20,0.75);
+  background: rgba(20,20,20,0.80);
   -webkit-backdrop-filter: blur(20px);
   backdrop-filter: blur(20px);
   border-bottom: 1px solid var(--color-border);
@@ -234,9 +234,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .site-header.scrolled {
-  background: rgba(8,11,20,0.95);
-  box-shadow: 0 2px 30px rgba(0,0,0,0.7);
-  border-bottom-color: rgba(255,123,36,0.15);
+  background: rgba(20,20,20,0.97);
+  box-shadow: 0 2px 30px rgba(0,0,0,0.6);
+  border-bottom-color: rgba(244,124,32,0.2);
 }
 
 .nav-container {
@@ -629,6 +629,45 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0;
 }
 
+/* Section bottom depth shadow — reinforces the alternating block separation */
+.about::after,
+.owner::after,
+.services::after,
+.machines::after,
+.gallery::after,
+.contact::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.25));
+  pointer-events: none;
+}
+
+/* Section separator – horizontal rule with centre icon */
+.section-divider {
+  border: none;
+  position: relative;
+  height: 0;
+  margin: 0;
+  overflow: visible;
+  text-align: center;
+  z-index: 1;
+}
+
+.section-divider::before {
+  content: '';
+  display: block;
+  width: 120px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--color-orange), transparent);
+  margin: 0 auto;
+  position: relative;
+  top: -1px;
+}
+
 /* =========================================================
    ABOUT SECTION
    ========================================================= */
@@ -643,8 +682,8 @@ h1, h2, h3, h4, h5, h6 {
   top: 0;
   left: 0;
   right: 0;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(244,124,32,0.45), transparent);
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--color-orange), transparent);
 }
 
 .about-grid {
@@ -735,8 +774,8 @@ h1, h2, h3, h4, h5, h6 {
   content: '';
   position: absolute;
   top: 0; left: 0; right: 0;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(255,123,36,0.4), transparent);
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--color-orange), transparent);
 }
 
 .owner-card {
@@ -860,7 +899,7 @@ h1, h2, h3, h4, h5, h6 {
    SERVICES SECTION
    ========================================================= */
 .services {
-  background: var(--color-dark);
+  background: var(--color-dark2);
   position: relative;
 }
 
@@ -868,8 +907,8 @@ h1, h2, h3, h4, h5, h6 {
   content: '';
   position: absolute;
   top: 0; left: 0; right: 0;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(255,123,36,0.4), transparent);
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--color-orange), transparent);
 }
 
 .services-grid {
@@ -967,7 +1006,7 @@ h1, h2, h3, h4, h5, h6 {
    MACHINES SECTION
    ========================================================= */
 .machines {
-  background: var(--color-dark2);
+  background: var(--color-dark);
   position: relative;
 }
 
@@ -975,8 +1014,8 @@ h1, h2, h3, h4, h5, h6 {
   content: '';
   position: absolute;
   top: 0; left: 0; right: 0;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(255,123,36,0.4), transparent);
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--color-orange), transparent);
 }
 
 .machines-grid {
@@ -1051,7 +1090,7 @@ h1, h2, h3, h4, h5, h6 {
    GALLERY SECTION
    ========================================================= */
 .gallery {
-  background: var(--color-dark);
+  background: var(--color-dark2);
   position: relative;
 }
 
@@ -1059,8 +1098,8 @@ h1, h2, h3, h4, h5, h6 {
   content: '';
   position: absolute;
   top: 0; left: 0; right: 0;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(255,123,36,0.4), transparent);
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--color-orange), transparent);
 }
 
 .gallery-grid {
@@ -1097,7 +1136,7 @@ h1, h2, h3, h4, h5, h6 {
    CONTACT SECTION
    ========================================================= */
 .contact {
-  background: var(--color-dark2);
+  background: var(--color-dark);
   position: relative;
 }
 
@@ -1105,8 +1144,8 @@ h1, h2, h3, h4, h5, h6 {
   content: '';
   position: absolute;
   top: 0; left: 0; right: 0;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(255,123,36,0.4), transparent);
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--color-orange), transparent);
 }
 
 .contact-grid {
@@ -1194,9 +1233,9 @@ h1, h2, h3, h4, h5, h6 {
    FOOTER
    ========================================================= */
 .site-footer {
-  background: #060810;
-  padding: 4rem 0 1.75rem;
-  border-top: 1px solid rgba(255,123,36,0.2);
+  background: #141414;
+  padding: 4.5rem 0 1.75rem;
+  border-top: 1px solid rgba(244,124,32,0.2);
   position: relative;
 }
 
@@ -1416,7 +1455,7 @@ h1, h2, h3, h4, h5, h6 {
     right: -100%;
     width: min(320px, 80vw);
     height: 100vh;
-    background: rgba(8,11,20,0.97);
+    background: rgba(20,20,20,0.97);
     -webkit-backdrop-filter: blur(20px);
     backdrop-filter: blur(20px);
     border-left: 1px solid var(--color-border);
@@ -1499,7 +1538,7 @@ h1, h2, h3, h4, h5, h6 {
 @media (max-width: 600px) {
   :root { --nav-height: 64px; }
 
-  .section { padding: 4rem 0; }
+  .section { padding: 5rem 0; }
 
   .hero-actions { flex-direction: column; align-items: center; }
   .hero-actions .btn { width: 100%; max-width: 280px; }
