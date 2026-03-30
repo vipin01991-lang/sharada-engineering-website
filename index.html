@@ -20,6 +20,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Oswald:wght@400;600;700&display=swap" rel="stylesheet" />
 
+  <link rel="preload" as="image" href="https://github.com/user-attachments/assets/73d303c4-1bbe-4aa4-ba79-3b271485cc84">
+
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
@@ -94,14 +96,7 @@
             <div class="hero-machine-label">State-of-the-art Lathe Machinery</div>
           </div>
         </div>
-
-      </div>
-      <div class="hero-scroll-hint">
-        <span>Scroll Down</span>
-        <div class="scroll-arrow"></div>
-      </div>
-    </section>
-
+   </section>
     <!-- ===== STATS BAR ===== -->
     <div class="stats-bar">
       <div class="container">
@@ -139,7 +134,8 @@
               class="about-img"
               src="public/images/about-workshop.webp"
               alt="Lathe machining workshop technician at work"
-              loading="lazy"
+              loading="eager"
+              fetchpriority="high"
             >
           </div>
           <div class="about-content">
@@ -376,59 +372,44 @@
         </div>
         <div class="gallery-grid">
           <div class="gallery-item gallery-item--wide">
-            <picture>
-              <source srcset="images/gallery-1.webp" type="image/webp">
-              <img
-                class="gallery-img"
-                src="public/images/gallery-1.webp"
-                alt="Sharada Engineering Works workshop"
-                loading="lazy"
-              >
-            </picture>
+            <img
+              class="gallery-img"
+              src="public/images/gallery-1.webp"
+              alt="Sharada Engineering Works workshop"
+              loading="lazy"
+            >
           </div>
           <div class="gallery-item">
-            <picture>
-              <source srcset="images/gallery-2.webp" type="image/webp">
-              <img
-                class="gallery-img"
-                src="public/images/gallery-2.webp"
-                alt="Machining work at Sharada Engineering"
-                loading="lazy"
-              >
-            </picture>
+            <img
+              class="gallery-img"
+              src="public/images/gallery-2.webp"
+              alt="Machining work at Sharada Engineering"
+              loading="lazy"
+            >
           </div>
           <div class="gallery-item">
-            <picture>
-              <source srcset="images/gallery-3.webp" type="image/webp">
-              <img
-                class="gallery-img"
-                src="public/images/gallery-3.webp"
-                alt="Precision engineering and lathe work"
-                loading="lazy"
-              >
-            </picture>
+            <img
+              class="gallery-img"
+              src="public/images/gallery-3.webp"
+              alt="Precision engineering and lathe work"
+              loading="lazy"
+            >
           </div>
           <div class="gallery-item">
-            <picture>
-              <source srcset="images/gallery-4.webp" type="image/webp">
-              <img
-                class="gallery-img"
-                src="public/images/gallery-4.webp"
-                alt="Workshop fabrication and repair work"
-                loading="lazy"
-              >
-            </picture>
+            <img
+              class="gallery-img"
+              src="public/images/gallery-4.webp"
+              alt="Workshop fabrication and repair work"
+              loading="lazy"
+            >
           </div>
           <div class="gallery-item gallery-item--wide">
-            <picture>
-              <source srcset="images/gallery-5.webp" type="image/webp">
-              <img
-                class="gallery-img"
-                src="public/images/gallery-5.webp"
-                alt="Engineering components and machined parts"
-                loading="lazy"
-              >
-            </picture>
+            <img
+              class="gallery-img"
+              src="public/images/gallery-5.webp"
+              alt="Engineering components and machined parts"
+              loading="lazy"
+            >
           </div>
         </div>
       </div>
