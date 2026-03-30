@@ -917,6 +917,56 @@ img {
 }
 
 /* =========================================================
+   FLOATING WHATSAPP BUTTON
+   ========================================================= */
+.floating-whatsapp {
+  position: fixed;
+  bottom: 6.5rem;
+  right: 2rem;
+  width: 56px;
+  height: 56px;
+  background: #25d366;
+  color: var(--color-white);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  text-decoration: none;
+  box-shadow: 0 4px 16px rgba(37, 211, 102, 0.45);
+  z-index: 1000;
+  transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
+}
+
+.floating-whatsapp:hover {
+  background: #1ebe5d;
+  transform: translateY(-3px) scale(1.08);
+  box-shadow: 0 6px 22px rgba(37, 211, 102, 0.6);
+}
+
+/* =========================================================
+   CONTACT ACTIONS
+   ========================================================= */
+.contact-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+.btn-directions {
+  background: #1a73e8;
+  color: var(--color-white);
+  border-color: #1a73e8;
+}
+
+.btn-directions:hover {
+  background: #1558b0;
+  border-color: #1558b0;
+  transform: translateY(-2px);
+}
+
+/* =========================================================
    BACK TO TOP
    ========================================================= */
 .back-to-top {
@@ -1087,5 +1137,17 @@ img {
   .back-to-top {
     bottom: 1.25rem;
     right: 1.25rem;
+  }
+
+  .floating-whatsapp {
+    bottom: 5.5rem;
+    right: 1.25rem;
+    width: 50px;
+    height: 50px;
+    font-size: 1.4rem;
+  }
+
+  .contact-actions .btn {
+    width: 100%;
   }
 }
