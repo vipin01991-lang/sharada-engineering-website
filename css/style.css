@@ -23,6 +23,7 @@
   --color-border:  #444444;
 
   --font-main:     'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --font-heading:  'Oswald', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   --transition:    0.3s ease;
   --radius:        8px;
   --shadow:        0 4px 20px rgba(0,0,0,0.35);
@@ -56,6 +57,11 @@ img {
   display: block;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  letter-spacing: 0.02em;
+}
+
 /* ----- Utility ----- */
 .container {
   width: 100%;
@@ -87,16 +93,18 @@ img {
 }
 
 .section-title {
-  font-size: clamp(1.8rem, 4vw, 2.6rem);
-  font-weight: 800;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-weight: 700;
   color: var(--color-white);
   margin-bottom: 0.6rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
 }
 
 .title-underline {
-  width: 60px;
+  width: 64px;
   height: 4px;
-  background: var(--color-orange);
+  background: linear-gradient(90deg, var(--color-orange), var(--color-orange2));
   margin: 0 auto 1rem;
   border-radius: 2px;
 }
@@ -334,32 +342,22 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 40%, #1a1a1a 100%);
+  background-color: #1a1a1a;
+  background-image: url('https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&w=1920&q=80');
+  background-size: cover;
+  background-position: center;
   overflow: hidden;
-}
-
-/* Gear / cog pattern via CSS */
-.hero::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image:
-    radial-gradient(circle at 20% 20%, rgba(244, 124, 32, 0.08) 0%, transparent 50%),
-    radial-gradient(circle at 80% 80%, rgba(244, 124, 32, 0.06) 0%, transparent 50%),
-    repeating-linear-gradient(
-      45deg,
-      transparent,
-      transparent 40px,
-      rgba(255,255,255,0.02) 40px,
-      rgba(255,255,255,0.02) 41px
-    );
-  pointer-events: none;
 }
 
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(20, 20, 20, 0.55);
+  background: linear-gradient(
+    160deg,
+    rgba(15, 15, 15, 0.82) 0%,
+    rgba(20, 20, 20, 0.72) 60%,
+    rgba(30, 20, 10, 0.78) 100%
+  );
 }
 
 .hero-content {
@@ -385,21 +383,27 @@ img {
 }
 
 .hero-title {
-  font-size: clamp(2.2rem, 6vw, 4.5rem);
-  font-weight: 900;
+  font-size: clamp(2.4rem, 6vw, 5rem);
+  font-weight: 700;
   line-height: 1.1;
   color: var(--color-white);
   margin-bottom: 1rem;
-  text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+  text-shadow: 0 2px 20px rgba(0,0,0,0.6);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
 }
 
 .hero-tagline {
-  font-size: clamp(1rem, 2.5vw, 1.4rem);
-  color: rgba(255,255,255,0.8);
+  font-size: clamp(1rem, 2.5vw, 1.3rem);
+  color: rgba(255,255,255,0.85);
   margin-bottom: 2.5rem;
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
+  padding: 0.75rem 1.25rem;
+  border: 1px solid rgba(244,124,32,0.35);
+  border-radius: var(--radius);
+  background: rgba(244,124,32,0.08);
 }
 
 .hero-actions {
@@ -443,10 +447,59 @@ img {
 }
 
 /* =========================================================
+   STATS BAR
+   ========================================================= */
+.stats-bar {
+  background: var(--color-orange);
+  padding: 1.75rem 0;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  text-align: center;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+.stat-num {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-weight: 700;
+  color: var(--color-white);
+  line-height: 1;
+  letter-spacing: 0.04em;
+}
+
+.stat-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.85);
+}
+
+/* Section separator accent line */
+.section-separator {
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--color-orange), transparent);
+  border: none;
+  margin: 0;
+}
+
+/* =========================================================
    ABOUT SECTION
    ========================================================= */
 .about {
   background: var(--color-dark2);
+  border-top: 3px solid var(--color-border);
 }
 
 .about-grid {
@@ -479,10 +532,11 @@ img {
 }
 
 .about-content h3 {
-  font-size: 1.6rem;
-  font-weight: 800;
+  font-size: 1.7rem;
+  font-weight: 600;
   color: var(--color-white);
   margin-bottom: 1rem;
+  letter-spacing: 0.03em;
 }
 
 .about-content p {
@@ -517,6 +571,7 @@ img {
    ========================================================= */
 .services {
   background: var(--color-dark);
+  border-top: 3px solid var(--color-border);
 }
 
 .services-grid {
@@ -528,6 +583,7 @@ img {
 .service-card {
   background: var(--color-dark2);
   border: 1px solid var(--color-border);
+  border-top: 3px solid var(--color-orange);
   border-radius: var(--radius);
   padding: 2rem;
   transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition);
@@ -564,10 +620,12 @@ img {
 }
 
 .service-card h3 {
-  font-size: 1.2rem;
-  font-weight: 800;
+  font-size: 1.25rem;
+  font-weight: 600;
   color: var(--color-orange);
   margin-bottom: 0.75rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
 }
 
 .service-card p {
@@ -603,6 +661,7 @@ img {
    ========================================================= */
 .machines {
   background: var(--color-dark2);
+  border-top: 3px solid var(--color-border);
 }
 
 .machines-grid {
@@ -638,10 +697,12 @@ img {
 }
 
 .machine-card h3 {
-  font-size: 1.05rem;
-  font-weight: 800;
+  font-size: 1.1rem;
+  font-weight: 600;
   color: var(--color-orange);
   margin-bottom: 0.6rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
 }
 
 .machine-card p {
@@ -655,6 +716,7 @@ img {
    ========================================================= */
 .gallery {
   background: var(--color-dark);
+  border-top: 3px solid var(--color-border);
 }
 
 .gallery-grid {
@@ -721,6 +783,7 @@ img {
    ========================================================= */
 .contact {
   background: var(--color-dark2);
+  border-top: 3px solid var(--color-border);
 }
 
 .contact-grid {
@@ -996,6 +1059,11 @@ img {
     display: block;
   }
 
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+
   .about-grid {
     grid-template-columns: 1fr;
   }
@@ -1046,6 +1114,10 @@ img {
 
   .machines-grid {
     grid-template-columns: 1fr;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .gallery-grid {
