@@ -147,4 +147,19 @@
   // Run once on load
   onScroll();
   highlightActiveNav();
+
+  // ── Remove shimmer from image containers once images load ──
+  document.querySelectorAll(
+    '.hero-image-frame, .about-image-wrap, .machine-img-wrap, .gallery-grid > img'
+  ).forEach(function (container) {
+    var img = container.tagName === 'IMG' ? container : container.querySelector('img');
+    if (!img) return;
+    function markLoaded() { container.classList.add('img-loaded'); }
+    if (img.complete && img.naturalWidth) {
+      markLoaded();
+    } else {
+      img.addEventListener('load', markLoaded);
+      img.addEventListener('error', markLoaded);
+    }
+  });
 }());

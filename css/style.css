@@ -68,6 +68,32 @@ img {
   display: block;
 }
 
+/* ----- Image loading skeleton shimmer ----- */
+@keyframes imgShimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position:  200% 0; }
+}
+
+.hero-image-frame,
+.about-image-wrap,
+.machine-img-wrap,
+.gallery-grid > img {
+  background: linear-gradient(
+    90deg,
+    var(--color-dark3) 25%,
+    var(--color-dark4) 50%,
+    var(--color-dark3) 75%
+  );
+  background-size: 200% 100%;
+  animation: imgShimmer 1.6s ease-in-out infinite;
+}
+
+/* Stop shimmer once image has loaded (JS adds .img-loaded class) */
+.img-loaded {
+  animation: none;
+  background: none;
+}
+
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
   letter-spacing: 0.02em;
@@ -609,6 +635,7 @@ h1, h2, h3, h4, h5, h6 {
   border: 1px solid rgba(244,124,32,0.30);
   box-shadow: 0 0 60px rgba(244,124,32,0.18), 0 20px 60px rgba(0,0,0,0.7);
   transition: box-shadow var(--transition);
+  background-color: var(--color-dark3);
 }
 
 .hero-image-frame img:hover {
@@ -805,6 +832,7 @@ h1, h2, h3, h4, h5, h6 {
   display: block;
   border: 1px solid var(--color-border);
   transition: box-shadow var(--transition);
+  background-color: var(--color-dark3);
 }
 
 .about-img:hover {
@@ -1173,6 +1201,7 @@ h1, h2, h3, h4, h5, h6 {
   object-position: center;
   filter: brightness(0.88);
   transition: transform var(--transition), filter var(--transition);
+  background-color: var(--color-dark3);
 }
 
 .machine-card:hover .machine-img {
@@ -1241,6 +1270,7 @@ h1, h2, h3, h4, h5, h6 {
   object-fit: cover;
   border-radius: 12px;
   display: block;
+  background-color: var(--color-dark3);
 }
 
 .gallery-grid img:first-child {
