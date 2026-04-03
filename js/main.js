@@ -117,7 +117,7 @@
 
   // ── Animate cards on scroll (Intersection Observer) ──────
   const animatedItems = document.querySelectorAll(
-    '.service-card, .machine-card, .gallery-item, .about-grid, .contact-item, .stat-item'
+    '.service-card, .machine-card, .gallery-item, .about-grid, .contact-item'
   );
 
   if ('IntersectionObserver' in window) {
