@@ -193,6 +193,9 @@ h1, h2, h3, h4, h5, h6 {
   overflow: hidden;
 }
 
+/* Call-to-action buttons use orange-red (#FF6B35) intentionally to
+   create visual contrast against the gold accent, making primary CTAs
+   immediately identifiable as action buttons. */
 .btn-primary {
   background: linear-gradient(135deg, #FF6B35, #E55A25);
   color: var(--color-white);
