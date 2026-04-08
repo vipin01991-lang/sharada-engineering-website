@@ -150,7 +150,7 @@
 
   // ── Remove shimmer from image containers once images load ──
   document.querySelectorAll(
-    '.hero-image-frame, .about-image-wrap, .machine-img-wrap, .gallery-grid > img'
+    '.hero-image-frame, .about-image-wrap, .gallery-grid > img'
   ).forEach(function (container) {
     var img = container.tagName === 'IMG' ? container : container.querySelector('img');
     if (!img) return;
