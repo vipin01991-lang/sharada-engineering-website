@@ -10,6 +10,7 @@ const mobileMenuLinks = document.querySelectorAll(".mobile-menu a");
 const navLinks = document.querySelectorAll('a[href^="#"]');
 
 function openLightboxWith(src, alt) {
+  if (!lightbox || !lightboxImage) return;
   lightboxImage.src = src;
   lightboxImage.alt = alt || "";
   lightbox.classList.add("active");
@@ -23,18 +24,23 @@ if (menuToggle && mobileMenu) {
 
 mobileMenuLinks.forEach((link) => {
   link.addEventListener("click", () => {
-    mobileMenu.classList.remove("active");
+    if (mobileMenu) {
+      mobileMenu.classList.remove("active");
+    }
   });
 });
 
 window.addEventListener("scroll", () => {
+  if (!scrollProgress) return;
+
   const scrollTop = window.scrollY;
   const docHeight = document.documentElement.scrollHeight - window.innerHeight;
   const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+
   scrollProgress.style.width = progress + "%";
 });
 
-if (openLightbox && lightbox && heroPreview) {
+if (openLightbox && heroPreview) {
   openLightbox.addEventListener("click", () => {
     openLightboxWith(heroPreview.src, heroPreview.alt);
   });
@@ -43,25 +49,6 @@ if (openLightbox && lightbox && heroPreview) {
     openLightboxWith(heroPreview.src, heroPreview.alt);
   });
 }
-
-document.querySelectorAll(".gallery-item").forEach((item) => {
-  item.setAttribute("tabindex", "0");
-  item.setAttribute("role", "button");
-
-  const handler = () => {
-    const src = item.getAttribute("data-src");
-    const alt = item.getAttribute("data-alt");
-    if (src) openLightboxWith(src, alt);
-  };
-
-  item.addEventListener("click", handler);
-  item.addEventListener("keydown", (e) => {
-    if (e.key === "Enter" || e.key === " ") {
-      e.preventDefault();
-      handler();
-    }
-  });
-});
 
 if (closeLightbox && lightbox) {
   closeLightbox.addEventListener("click", () => {
@@ -76,7 +63,7 @@ if (closeLightbox && lightbox) {
 }
 
 document.addEventListener("keydown", (e) => {
-  if (e.key === "Escape" && lightbox.classList.contains("active")) {
+  if (e.key === "Escape" && lightbox && lightbox.classList.contains("active")) {
     lightbox.classList.remove("active");
   }
 });
