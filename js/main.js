@@ -2,11 +2,18 @@ const menuToggle = document.getElementById("menuToggle");
 const mobileMenu = document.getElementById("mobileMenu");
 const scrollProgress = document.getElementById("scrollProgress");
 const lightbox = document.getElementById("lightbox");
+const lightboxImage = document.getElementById("lightboxImage");
 const openLightbox = document.getElementById("openLightbox");
 const closeLightbox = document.getElementById("closeLightbox");
 const heroPreview = document.getElementById("heroPreview");
 const mobileMenuLinks = document.querySelectorAll(".mobile-menu a");
 const navLinks = document.querySelectorAll('a[href^="#"]');
+
+function openLightboxWith(src, alt) {
+  lightboxImage.src = src;
+  lightboxImage.alt = alt || "";
+  lightbox.classList.add("active");
+}
 
 if (menuToggle && mobileMenu) {
   menuToggle.addEventListener("click", () => {
@@ -29,13 +36,32 @@ window.addEventListener("scroll", () => {
 
 if (openLightbox && lightbox && heroPreview) {
   openLightbox.addEventListener("click", () => {
-    lightbox.classList.add("active");
+    openLightboxWith(heroPreview.src, heroPreview.alt);
   });
 
   heroPreview.addEventListener("click", () => {
-    lightbox.classList.add("active");
+    openLightboxWith(heroPreview.src, heroPreview.alt);
   });
 }
+
+document.querySelectorAll(".gallery-item").forEach((item) => {
+  item.setAttribute("tabindex", "0");
+  item.setAttribute("role", "button");
+
+  const handler = () => {
+    const src = item.getAttribute("data-src");
+    const alt = item.getAttribute("data-alt");
+    if (src) openLightboxWith(src, alt);
+  };
+
+  item.addEventListener("click", handler);
+  item.addEventListener("keydown", (e) => {
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      handler();
+    }
+  });
+});
 
 if (closeLightbox && lightbox) {
   closeLightbox.addEventListener("click", () => {
