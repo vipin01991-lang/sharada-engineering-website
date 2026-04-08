@@ -1,165 +1,78 @@
-/* =========================================================
-   Sharada Engineering Works – Main JavaScript
-   ========================================================= */
+const menuToggle = document.getElementById("menuToggle");
+const mobileMenu = document.getElementById("mobileMenu");
+const scrollProgress = document.getElementById("scrollProgress");
+const lightbox = document.getElementById("lightbox");
+const openLightbox = document.getElementById("openLightbox");
+const closeLightbox = document.getElementById("closeLightbox");
+const heroPreview = document.getElementById("heroPreview");
+const mobileMenuLinks = document.querySelectorAll(".mobile-menu a");
+const navLinks = document.querySelectorAll('a[href^="#"]');
 
-(function () {
-  'use strict';
+if (menuToggle && mobileMenu) {
+  menuToggle.addEventListener("click", () => {
+    mobileMenu.classList.toggle("active");
+  });
+}
 
-  // Extra offset (px) added to scrollY when determining the active section,
-  // accounting for the sticky nav height plus a small visual buffer.
-  const NAV_SCROLL_OFFSET = 90;
+mobileMenuLinks.forEach((link) => {
+  link.addEventListener("click", () => {
+    mobileMenu.classList.remove("active");
+  });
+});
 
-  // Fraction of an element that must be visible before its entrance
-  // animation triggers. 0.12 feels natural – the card just peeks in.
-  const ANIMATION_TRIGGER_THRESHOLD = 0.12;
+window.addEventListener("scroll", () => {
+  const scrollTop = window.scrollY;
+  const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+  const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+  scrollProgress.style.width = progress + "%";
+});
 
-  // ── Sticky nav / scrolled class ──────────────────────────
-  const header    = document.getElementById('site-header');
-  const backToTop = document.getElementById('back-to-top');
+if (openLightbox && lightbox && heroPreview) {
+  openLightbox.addEventListener("click", () => {
+    lightbox.classList.add("active");
+  });
 
-  function onScroll() {
-    if (window.scrollY > 60) {
-      header.classList.add('scrolled');
-    } else {
-      header.classList.remove('scrolled');
+  heroPreview.addEventListener("click", () => {
+    lightbox.classList.add("active");
+  });
+}
+
+if (closeLightbox && lightbox) {
+  closeLightbox.addEventListener("click", () => {
+    lightbox.classList.remove("active");
+  });
+
+  lightbox.addEventListener("click", (e) => {
+    if (e.target === lightbox) {
+      lightbox.classList.remove("active");
     }
+  });
+}
 
-    if (window.scrollY > 400) {
-      backToTop.classList.add('visible');
-    } else {
-      backToTop.classList.remove('visible');
-    }
-
-    highlightActiveNav();
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape" && lightbox.classList.contains("active")) {
+    lightbox.classList.remove("active");
   }
+});
 
-  window.addEventListener('scroll', onScroll, { passive: true });
+navLinks.forEach((link) => {
+  link.addEventListener("click", function (e) {
+    const targetId = this.getAttribute("href");
 
-  // ── Back to top ──────────────────────────────────────────
-  backToTop.addEventListener('click', function () {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
+    if (!targetId || !targetId.startsWith("#")) return;
 
-  // ── Mobile navigation toggle ─────────────────────────────
-  const navToggle = document.getElementById('nav-toggle');
-  const mainNav   = document.getElementById('main-nav');
+    const target = document.querySelector(targetId);
+    if (!target) return;
 
-  // Create overlay element
-  const overlay = document.createElement('div');
-  overlay.className = 'nav-overlay';
-  document.body.appendChild(overlay);
+    e.preventDefault();
 
-  function openNav() {
-    mainNav.classList.add('open');
-    navToggle.classList.add('open');
-    navToggle.setAttribute('aria-expanded', 'true');
-    overlay.classList.add('active');
-    document.body.style.overflow = 'hidden';
-  }
+    const headerOffset = 80;
+    const targetPosition =
+      target.getBoundingClientRect().top + window.pageYOffset - headerOffset;
 
-  function closeNav() {
-    mainNav.classList.remove('open');
-    navToggle.classList.remove('open');
-    navToggle.setAttribute('aria-expanded', 'false');
-    overlay.classList.remove('active');
-    document.body.style.overflow = '';
-  }
-
-  navToggle.addEventListener('click', function () {
-    if (mainNav.classList.contains('open')) {
-      closeNav();
-    } else {
-      openNav();
-    }
-  });
-
-  overlay.addEventListener('click', closeNav);
-
-  // Close nav when a link is clicked
-  mainNav.querySelectorAll('.nav-link').forEach(function (link) {
-    link.addEventListener('click', closeNav);
-  });
-
-  // Close nav on ESC key
-  document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape' && mainNav.classList.contains('open')) {
-      closeNav();
-    }
-  });
-
-  // ── Active nav highlight on scroll ───────────────────────
-  const sections = document.querySelectorAll('main section[id]');
-  const navLinks  = document.querySelectorAll('.nav-link');
-
-  function highlightActiveNav() {
-    const scrollPos = window.scrollY + NAV_SCROLL_OFFSET;
-    let   active    = null;
-
-    sections.forEach(function (section) {
-      if (section.offsetTop <= scrollPos) {
-        active = section.getAttribute('id');
-      }
+    window.scrollTo({
+      top: targetPosition,
+      behavior: "smooth",
     });
-
-    navLinks.forEach(function (link) {
-      link.classList.remove('active');
-      if (active && link.getAttribute('href') === '#' + active) {
-        link.classList.add('active');
-      }
-    });
-  }
-
-  // ── Footer year ──────────────────────────────────────────
-  const yearEl = document.getElementById('footer-year');
-  if (yearEl) {
-    yearEl.textContent = new Date().getFullYear();
-  }
-
-  // ── Animate cards on scroll (Intersection Observer) ──────
-  const animatedItems = document.querySelectorAll(
-    '.service-card, .machine-card, .gallery-item, .about-grid, .contact-item'
-  );
-
-  if ('IntersectionObserver' in window) {
-    const observer = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting) {
-          var delay = entry.target.dataset.delay || 0;
-          entry.target.style.animationDelay = delay + 'ms';
-          entry.target.style.animation = 'fadeUp 0.6s ease both';
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: ANIMATION_TRIGGER_THRESHOLD });
-
-    animatedItems.forEach(function (el, index) {
-      el.style.opacity = '0';
-      // Stagger sibling cards within the same parent container
-      var siblings = el.parentElement ? el.parentElement.children : [];
-      var siblingIndex = Array.prototype.indexOf.call(siblings, el);
-      if (siblingIndex > 0) {
-        el.dataset.delay = siblingIndex * 80;
-      }
-      observer.observe(el);
-    });
-  }
-
-  // Run once on load
-  onScroll();
-  highlightActiveNav();
-
-  // ── Remove shimmer from image containers once images load ──
-  document.querySelectorAll(
-    '.hero-image-frame, .about-image-wrap, .gallery-grid > img'
-  ).forEach(function (container) {
-    var img = container.tagName === 'IMG' ? container : container.querySelector('img');
-    if (!img) return;
-    function markLoaded() { container.classList.add('img-loaded'); }
-    if (img.complete && img.naturalWidth) {
-      markLoaded();
-    } else {
-      img.addEventListener('load', markLoaded);
-      img.addEventListener('error', markLoaded);
-    }
   });
-}());
+});
