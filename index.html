@@ -3,517 +3,312 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sharada Engineering Works | Lathe Works & Machining in Iritty, Kannur</title>
-
-  <!-- SEO Meta Tags -->
-  <meta name="description" content="Sharada Engineering Works – Specialised lathe machining and vehicle component reconditioning in Iritty, Kannur, Kerala. Shaft repair, bush fitting, bearing fitting and more. Call us today!" />
-  <meta name="keywords" content="Lathe works in Iritty, Lathe machining Kannur, Shaft repair Iritty, Bush fitting lathe work Kerala, vehicle component reconditioning Kannur, axle repair Iritty, gearbox parts machining, Sharada Engineering Works" />
-  <meta name="author" content="Sharada Engineering Works" />
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="Sharada Engineering Works | Lathe & Machining Works, Iritty, Kannur" />
-  <meta property="og:description" content="Specialised lathe machining and vehicle component reconditioning in Iritty, Kannur, Kerala. Shaft repair, bush fitting, bearing fitting and more." />
-  <meta property="og:type" content="website" />
-
-  <!-- Fonts: Oswald (headings) + Inter (body) -->
+  <title>Sharada Engineering Works | Iritty, Kannur</title>
+  <meta
+    name="description"
+    content="Sharada Engineering Works - Precision lathe machining, shaft and axle repair, bush and bearing fitting, and water pump reconditioning in Iritty, Kannur."
+  />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Oswald:wght@400;600;700&display=swap" rel="stylesheet" />
-
-  <link rel="preload" as="image" href="https://github.com/user-attachments/assets/73d303c4-1bbe-4aa4-ba79-3b271485cc84">
-
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
+  <div id="scrollProgress"></div>
 
-  <!-- ===== NAVIGATION ===== -->
-  <header class="site-header" id="site-header">
-    <div class="container nav-container">
-      <a href="#home" class="logo">
-        <span class="logo-icon">⚙</span>
-        <span class="logo-text">Sharada Engineering<br><small>Works</small></span>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a href="#home" class="brand">
+        <div class="brand-logo">SE</div>
+        <div class="brand-text">
+          <h1>Sharada Engineering</h1>
+          <p>Works</p>
+        </div>
       </a>
-      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
-      <nav class="main-nav" id="main-nav">
-        <ul>
-          <li><a href="#home" class="nav-link">Home</a></li>
-          <li><a href="#about" class="nav-link">About</a></li>
-          <li><a href="#owner" class="nav-link">Owner</a></li>
-          <li><a href="#services" class="nav-link">Services</a></li>
-          <li><a href="#machines" class="nav-link">Machines</a></li>
-          <li><a href="#gallery" class="nav-link">Gallery</a></li>
-          <li><a href="#contact" class="nav-link btn-nav">Contact</a></li>
-        </ul>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#equipment">Equipment</a>
+        <a href="#contact">Contact</a>
       </nav>
+
+      <div class="nav-actions">
+        <a class="btn btn-gold btn-small" href="tel:+918075127142">Call Now</a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Open menu">☰</button>
+      </div>
+    </div>
+
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#equipment">Equipment</a>
+      <a href="#contact">Contact</a>
     </div>
   </header>
 
   <main>
+    <section class="hero section" id="home">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <span class="eyebrow">Welcome To</span>
 
-    <!-- ===== HERO / HOME ===== -->
-    <section class="hero" id="home">
-      <div class="hero-bg"></div>
-      <div class="hero-overlay"></div>
-      <div class="hero-grid-pattern"></div>
-      <div class="hero-glow hero-glow--left"></div>
-      <div class="hero-glow hero-glow--right"></div>
-
-      <div class="container hero-content">
-        <div class="hero-text">
-          <p class="hero-label">Welcome To</p>
-          <h1 class="hero-title">
+          <h2 class="hero-title">
             SHARADA
             <span>ENGINEERING</span>
             WORKS
-          </h1>
-          <p class="hero-tagline">Precision Lathe Works &amp; Vehicle Component Reconditioning in Iritty, Kannur</p>
-          <p class="ml-text">ഇരിട്ടിയിലെ വിശ്വസനീയമായ ലെയ്ത്ത് വർക്ക് ഷോപ്പ്</p>
+          </h2>
 
-          <div class="hero-chips">
-            <span class="hero-chip">⚙ Lathe Machining</span>
-            <span class="hero-chip">🔩 Shaft &amp; Axle Repair</span>
-            <span class="hero-chip">🛞 Bush &amp; Bearing Fitting</span>
-            <span class="hero-chip">💦 Water Pump Reconditioning</span>
+          <p class="hero-subtitle">
+            Precision Lathe Works & Vehicle Component Reconditioning in Iritty, Kannur
+          </p>
+
+          <p class="hero-subtitle-ml">
+            ഇരിട്ടിയിലെ വിശ്വസനീയമായ ലെയ്ത്ത് വർക്ക് ഷോപ്പ്
+          </p>
+
+          <div class="hero-buttons">
+            <a class="btn btn-orange" href="tel:+918075127142">Call Now</a>
+            <a class="btn btn-green" href="https://wa.me/918075127142" target="_blank">WhatsApp</a>
+            <a class="btn btn-outline" href="#contact">Directions</a>
           </div>
-
-          <div class="hero-actions">
-            <a href="tel:+918075127142" class="btn btn-primary">📞 Call Now</a>
-            <a href="https://wa.me/918075127142?text=Hello%2C%20I%20need%20information%20about%20your%20engineering%20services." class="btn btn-whatsapp" target="_blank" rel="noopener noreferrer">💬 WhatsApp</a>
-            <a href="https://maps.google.com/?q=Sharada+Engineering+Works+Iritty" class="btn btn-outline" target="_blank" rel="noopener noreferrer">📍 Directions</a>
-          </div>
-
         </div>
 
-        <div class="hero-image">
-          <div class="hero-image-frame">
+        <div class="hero-media">
+          <div class="hero-image-card">
             <img
-              src="https://github.com/user-attachments/assets/73d303c4-1bbe-4aa4-ba79-3b271485cc84"
-              alt="Precision lathe machining at Sharada Engineering Works workshop"
-              loading="eager"
-              fetchpriority="high"
-              width="520"
-              height="420"
-              decoding="async"
-            >
-            <div class="hero-image-badge">
-              <span class="hero-image-badge-num">40+</span>
-              <span class="hero-image-badge-text">Years of<br>Excellence</span>
+              src="images/workshop-main.jpg"
+              alt="Sharada Engineering Works workshop"
+              class="hero-image"
+              id="heroPreview"
+            />
+            <div class="image-overlay">
+              <button class="zoom-btn" id="openLightbox">Click to Zoom</button>
             </div>
           </div>
+
+          <div class="badge-years">
+            <strong>25+</strong>
+            <span>Years Excellence</span>
+          </div>
         </div>
       </div>
-
     </section>
 
-    <!-- ===== STATS BAND ===== -->
-    <div class="stats-band">
-      <div class="stats-band-grid">
-        <div class="stat-tile">
-          <div class="stat-tile-val">40+</div>
-          <div class="stat-tile-label">Years of Experience</div>
-          <div class="stat-tile-ml">വർഷം പരിചയം</div>
+    <section class="stats section-small">
+      <div class="container stats-grid">
+        <div class="stat-card">
+          <h3>25+</h3>
+          <p>Years Experience</p>
+          <span>വർഷം പരിചയം</span>
         </div>
-        <div class="stat-tile">
-          <div class="stat-tile-val">10K+</div>
-          <div class="stat-tile-label">Parts Machined</div>
-          <div class="stat-tile-ml">ഭാഗങ്ങൾ</div>
+        <div class="stat-card">
+          <h3>1000+</h3>
+          <p>Vehicles Serviced</p>
+          <span>വാഹനങ്ങൾ സേവനം</span>
         </div>
-        <div class="stat-tile">
-          <div class="stat-tile-val">10+</div>
-          <div class="stat-tile-label">Workshops Served</div>
-          <div class="stat-tile-ml">വർക്ക്ഷോപ്പുകൾ</div>
+        <div class="stat-card">
+          <h3>100%</h3>
+          <p>Quality Assured</p>
+          <span>ഗുണനിലവാരം</span>
         </div>
-        <div class="stat-tile">
-          <div class="stat-tile-val">7+</div>
-          <div class="stat-tile-label">Services Offered</div>
-          <div class="stat-tile-ml">സേവനങ്ങൾ</div>
+        <div class="stat-card">
+          <h3>24/7</h3>
+          <p>Support Available</p>
+          <span>സപ്പോർട്ട്</span>
         </div>
       </div>
-    </div>
+    </section>
 
-    <!-- ===== ABOUT ===== -->
-    <section class="section about" id="about">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-tag">Who We Are</span>
-          <h2 class="section-title">About Us</h2>
-        </div>
-        <div class="about-grid">
-          <div class="about-image-wrap">
-            <img
-              class="about-img"
-              src="https://github.com/user-attachments/assets/73d303c4-1bbe-4aa4-ba79-3b271485cc84"
-              alt="Lathe machining workshop technician at work"
-              loading="eager"
-              fetchpriority="high"
-              width="560"
-              height="400"
-              decoding="async"
-            >
-          </div>
-          <div class="about-content">
-            <h3>Your Local Lathe &amp; Machining Specialist</h3>
+    <section class="section" id="about">
+      <div class="container about-grid">
+        <div class="founder-card">
+          <div class="founder-avatar">SE</div>
+          <h3>Founder Name</h3>
+          <p class="founder-role">സ്ഥാപകൻ / Owner & Founder</p>
+          <span class="since-badge">Since 1998</span>
+
+          <div class="founder-quote">
             <p>
-              Sharada Engineering Works is a specialised lathe and machining workshop based in Iritty, Kannur, Kerala.
-              We work on individual vehicle components – we are not a general automobile service centre and we do not
-              repair full vehicles.
+              "With over 25 years of dedication to precision engineering, our commitment is to deliver the highest quality lathe and reconditioning services to every customer."
             </p>
-            <p>
-              Local mechanics, garages, and workshops bring their parts to us for precision machining and reconditioning.
-              From axles and drive shafts to gearbox parts and clutch components, we handle each job carefully to give
-              your parts a second life.
-            </p>
-            <div class="about-highlights">
-              <div class="highlight-item">
-                <span class="highlight-icon">✔</span>
-                <span>Experienced Lathe &amp; Machining Technicians</span>
-              </div>
-              <div class="highlight-item">
-                <span class="highlight-icon">✔</span>
-                <span>Specialised in Vehicle Component Reconditioning</span>
-              </div>
-              <div class="highlight-item">
-                <span class="highlight-icon">✔</span>
-                <span>Trusted by Local Mechanics &amp; Workshops</span>
-              </div>
-              <div class="highlight-item">
-                <span class="highlight-icon">✔</span>
-                <span>Serving Iritty, Kannur &amp; Surrounding Areas</span>
-              </div>
+            <small>ഗുണനിലവാരവും വിശ്വാസ്യതയും ഞങ്ങളുടെ മുൻഗണന</small>
+          </div>
+        </div>
+
+        <div class="about-content">
+          <p class="section-tag">About Us / ഞങ്ങളെക്കുറിച്ച്</p>
+          <h2>Trusted Lathe Works in Iritty Since 1998</h2>
+
+          <p>
+            Sharada Engineering Works is Iritty's trusted lathe and vehicle component
+            reconditioning specialist. Located in Kannur, Kerala, we serve the automotive
+            and industrial sectors with precision and reliability.
+          </p>
+
+          <p>
+            With over 25 years of expertise, we specialize in shaft repair, axle
+            reconditioning, bush and bearing fitting, water pump rebuilding, and precision
+            lathe operations for vehicles and machinery.
+          </p>
+
+          <div class="feature-list">
+            <div class="feature-item">
+              <h4>Fast Turnaround</h4>
+              <p>Quick repairs without compromising quality.</p>
+            </div>
+            <div class="feature-item">
+              <h4>Trusted in Iritty</h4>
+              <p>Serving Kannur's vehicle owners for over 25 years.</p>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ===== OWNER DETAILS ===== -->
-    <section class="section owner" id="owner">
+    <section class="section section-dark" id="services">
       <div class="container">
-        <div class="section-header">
-          <span class="section-tag">Meet The Owner</span>
-          <h2 class="section-title">Owner Details</h2>
-          </div>
-        <div class="owner-card">
-          <div class="owner-photo-wrap">
-            <img
-              class="owner-photo"
-              src="images/owner.jpg"
-              alt="Owner of Sharada Engineering Works"
-              loading="lazy"
-              width="200"
-              height="200"
-              decoding="async"
-              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
-            >
-            <div class="owner-photo-placeholder">
-              <span>👤</span>
-            </div>
-          </div>
-          <div class="owner-info">
-            <h3 class="owner-name">Ravindranath P</h3>
-            <p class="owner-role">Founder &amp; Owner, Sharada Engineering Works</p>
-            <p class="owner-bio">
-              With over 40 years of hands-on experience in lathe machining and vehicle component reconditioning,
-              the owner built Sharada Engineering Works from the ground up to serve the mechanics and workshops
-              of Iritty and the wider Kannur district. His deep expertise in precision machining ensures every
-              job is handled with skill and care.
-            </p>
-            <div class="owner-highlights">
-              <div class="owner-stat">
-                <span class="owner-stat-num">40+</span>
-                <span class="owner-stat-label">Years of Experience</span>
-              </div>
-              <div class="owner-stat">
-                <span class="owner-stat-num">10000+</span>
-                <span class="owner-stat-label">Parts Machined</span>
-              </div>
-              <div class="owner-stat">
-                <span class="owner-stat-num">10+</span>
-                <span class="owner-stat-label">Workshops Served</span>
-              </div>
-            </div>
-          </div>
+        <div class="section-head">
+          <p class="section-tag">Our Services / സേവനങ്ങൾ</p>
+          <h2>Vehicle Component Specialists</h2>
+          <p>
+            Expert lathe operations and reconditioning services for all types of vehicles and machinery.
+          </p>
         </div>
-      </div>
-    </section>
 
-    <!-- ===== SERVICES ===== -->
-    <section class="section services" id="services">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-tag">What We Do</span>
-          <h2 class="section-title">Our Services</h2>
-          <p class="section-subtitle">We specialise only in lathe and machining works. We do not provide full vehicle repair services.</p>
-        </div>
         <div class="services-grid">
+          <article class="service-card">
+            <div class="service-icon">01</div>
+            <h3>Lathe Machining</h3>
+            <h4>ലെയ്ത്ത് മെഷീനിംഗ്</h4>
+            <p>Precision lathe operations for vehicle components and industrial parts.</p>
+          </article>
 
-          <div class="service-card">
-            <div class="service-icon-box">⚙</div>
-            <h3>Lathe Machining Works</h3>
-            <p class="service-card-ml">ലെയ്ത്ത് മെഷീനിംഗ് വർക്ക്</p>
-            <p>Precision lathe operations for metal components. We handle turning, threading, and boring to exact measurements for vehicle and general engineering parts.</p>
-            <ul class="service-list">
-              <li>Metal Turning</li>
-              <li>Thread Cutting</li>
-              <li>Boring &amp; Facing</li>
-              <li>Taper Turning</li>
-            </ul>
-          </div>
+          <article class="service-card">
+            <div class="service-icon">02</div>
+            <h3>Shaft & Axle Repair</h3>
+            <h4>ഷാഫ്റ്റ് & ആക്സിൽ റിപ്പയർ</h4>
+            <p>Expert repair and reconditioning of shafts and axles for all vehicle types.</p>
+          </article>
 
-          <div class="service-card">
-            <div class="service-icon-box">🔩</div>
-            <h3>Vehicle Parts Reconditioning</h3>
-            <p class="service-card-ml">വാഹന ഭാഗ പുനരുദ്ധാരണം</p>
-            <p>Reconditioning of worn vehicle components to bring them back to correct size and working condition. We work on parts brought in by mechanics and garages.</p>
-            <ul class="service-list">
-              <li>Axle &amp; Drive Shaft Reconditioning</li>
-              <li>Gearbox Parts Machining</li>
-              <li>Clutch Parts Finishing</li>
-              <li>Brake Drum Turning</li>
-            </ul>
-          </div>
+          <article class="service-card">
+            <div class="service-icon">03</div>
+            <h3>Bush & Bearing Fitting</h3>
+            <h4>ബുഷ് & ബെയറിംഗ് ഫിറ്റിംഗ്</h4>
+            <p>Professional bush and bearing installation and replacement services.</p>
+          </article>
 
-          <div class="service-card">
-            <div class="service-icon-box">🔧</div>
-            <h3>Shaft &amp; Axle Repair</h3>
-            <p class="service-card-ml">ഷാഫ്റ്റ് &amp; ആക്സിൽ റിപ്പയർ</p>
-            <p>Resizing, straightening, and finishing of shafts and axles that have worn beyond tolerance. Restored to original dimensions with proper surface finish.</p>
-            <ul class="service-list">
-              <li>Shaft Resizing &amp; Turning</li>
-              <li>Axle Repair</li>
-              <li>Keyway Cutting</li>
-              <li>Surface Finishing</li>
-            </ul>
-          </div>
-
-          <div class="service-card">
-            <div class="service-icon-box">🛞</div>
-            <h3>Bush Making &amp; Fitting</h3>
-            <p class="service-card-ml">ബുഷ് നിർമ്മാണം &amp; ഫിറ്റിംഗ്</p>
-            <p>Custom bushes machined to the exact size needed for your application. Material selected based on load and fit requirements. Pressed in using hydraulic press.</p>
-            <ul class="service-list">
-              <li>Custom Bush Machining</li>
-              <li>Bush Replacement &amp; Fitting</li>
-              <li>Bearing Seat Preparation</li>
-              <li>Hydraulic Press Fitting</li>
-            </ul>
-          </div>
-
-          <div class="service-card">
-            <div class="service-icon-box">💧</div>
-            <h3>Bearing Fitting</h3>
-            <p class="service-card-ml">ബെയറിംഗ് ഫിറ്റിംഗ്</p>
-            <p>Proper bearing installation using hydraulic press to avoid damage during fitting. Shaft and housing surfaces prepared on lathe for correct interference fit.</p>
-            <ul class="service-list">
-              <li>Bearing Press Fitting</li>
-              <li>Shaft Preparation for Bearings</li>
-              <li>Housing Boring for Bearings</li>
-              <li>Bearing Removal</li>
-            </ul>
-          </div>
-
-          <div class="service-card">
-            <div class="service-icon-box">🔥</div>
-            <h3>Basic Welding (Support Work)</h3>
-            <p class="service-card-ml">വെൽഡിംഗ് (സപ്പോർട്ട്)</p>
-            <p>Simple welding as support for machining jobs – for example, building up worn surfaces before machining, or minor crack repair on components before reconditioning.</p>
-            <ul class="service-list">
-              <li>Weld Build-Up for Reconditioning</li>
-              <li>Minor Crack Repair</li>
-              <li>Support Welding for Machined Parts</li>
-            </ul>
-          </div>
-
-          <div class="service-card">
-            <div class="service-icon-box">💦</div>
+          <article class="service-card">
+            <div class="service-icon">04</div>
             <h3>Water Pump Reconditioning</h3>
-            <p class="service-card-ml">വാട്ടർ പമ്പ് റീകണ്ടീഷനിംഗ്</p>
-            <p>Reconditioning of worn water pump components to restore correct dimensions and smooth operation. Pump shafts, impellers, and housings are machined and fitted to original specifications.</p>
-            <ul class="service-list">
-              <li>Pump Shaft Turning &amp; Resizing</li>
-              <li>Impeller Reconditioning</li>
-              <li>Housing Boring &amp; Finishing</li>
-              <li>Seal &amp; Bearing Replacement</li>
-            </ul>
-          </div>
-
+            <h4>വാട്ടർ പമ്പ് റീകണ്ടീഷനിംഗ്</h4>
+            <p>Complete water pump rebuild and reconditioning services.</p>
+          </article>
         </div>
-
       </div>
     </section>
 
-    <!-- ===== MACHINES ===== -->
-    <section class="section machines" id="machines">
+    <section class="section" id="equipment">
       <div class="container">
-        <div class="section-header">
-          <span class="section-tag">Our Equipment</span>
-          <h2 class="section-title">Workshop Machines</h2>
-          <p class="section-subtitle">Our workshop is equipped with the right machines to handle precision lathe and machining jobs.</p>
+        <div class="section-head">
+          <p class="section-tag">Equipment / ഉപകരണങ്ങൾ</p>
+          <h2>Professional Workshop Equipment</h2>
+          <p>Modern machinery ensuring precision and quality in every job.</p>
         </div>
-        <div class="machines-grid">
 
-          <div class="machine-card">
-            <div class="machine-card-header">
-              <span class="machine-cog-icon">⚙</span>
-              <span class="machine-num-badge">MACHINE 01</span>
-            </div>
+        <div class="equipment-grid">
+          <article class="equipment-card">
+            <span>MACHINE 01</span>
             <h3>Lathe Machine</h3>
-            <p>Our main machine. Used for turning, boring, threading, and facing metal components. Handles shafts, axles, bushes, and other vehicle parts to exact dimensions.</p>
-          </div>
+            <p>Precision turning and shaft operations.</p>
+          </article>
 
-          <div class="machine-card">
-            <div class="machine-card-header">
-              <span class="machine-cog-icon">🔄</span>
-              <span class="machine-num-badge">MACHINE 02</span>
-            </div>
-            <h3>Drilling Machine</h3>
-            <p>Pillar drilling machine for accurate hole-making in metal components. Used for drilling, reaming, and counterboring as needed during machining jobs.</p>
-          </div>
+          <article class="equipment-card">
+            <span>MACHINE 02</span>
+            <h3>Welding Machine</h3>
+            <p>Professional welding and fabrication.</p>
+          </article>
 
-          <div class="machine-card">
-            <div class="machine-card-header">
-              <span class="machine-cog-icon">🌀</span>
-              <span class="machine-num-badge">MACHINE 03</span>
-            </div>
+          <article class="equipment-card">
+            <span>MACHINE 03</span>
             <h3>Grinding Machine</h3>
-            <p>Used for finishing and sizing metal parts to a smooth, precise surface. Ideal for final passes on shafts and other components requiring close tolerances.</p>
-          </div>
+            <p>Surface and cylindrical grinding.</p>
+          </article>
 
-          <div class="machine-card">
-            <div class="machine-card-header">
-              <span class="machine-cog-icon">💪</span>
-              <span class="machine-num-badge">MACHINE 04</span>
-            </div>
-            <h3>Hydraulic Press</h3>
-            <p>Used for pressing bearings, bushes, and other press-fit components safely. Prevents damage during assembly and disassembly of shaft and housing assemblies.</p>
-          </div>
+          <article class="equipment-card">
+            <span>MACHINE 04</span>
+            <h3>Cutting Machine</h3>
+            <p>Precision cutting and metal shaping.</p>
+          </article>
 
-          <div class="machine-card">
-            <div class="machine-card-header">
-              <span class="machine-cog-icon">⚡</span>
-              <span class="machine-num-badge">MACHINE 05</span>
-            </div>
-            <h3>Welding Machine (Support Use)</h3>
-            <p>Used only as support for machining jobs – weld build-up on worn surfaces before turning, or minor repairs on components before reconditioning.</p>
-          </div>
-
+          <article class="equipment-card">
+            <span>MACHINE 05</span>
+            <h3>Hydraulic Press Machine</h3>
+            <p>High-pressure forming and assembly.</p>
+          </article>
         </div>
       </div>
     </section>
 
-    <!-- ===== GALLERY ===== -->
-    <section class="section gallery" id="gallery">
+    <section class="section section-dark" id="contact">
       <div class="container">
-        <div class="section-header">
-          <span class="section-tag">Our Work</span>
-          <h2 class="section-title">Gallery</h2>
-          <p class="section-subtitle">A glimpse of our workshop and the machining work we do.</p>
-        </div>
-        <div class="gallery-grid">
-          <img src="https://github.com/user-attachments/assets/f2461a1d-bb2a-4bf7-b104-ac9ad5e4c69f" alt="Sharada Engineering Works workshop" loading="lazy" width="800" height="280" decoding="async">
-          <img src="https://github.com/user-attachments/assets/7f2de48c-cd87-45cc-9555-80bf3ac2cd70" alt="Machining work at Sharada Engineering" loading="lazy" width="400" height="280" decoding="async">
-          <img src="https://github.com/user-attachments/assets/48636fee-3d17-429a-aa26-a6cbd6665aa9" alt="Precision engineering and lathe work" loading="lazy" width="400" height="280" decoding="async">
-          <img src="https://github.com/user-attachments/assets/82603f33-b366-4513-8128-fae24113fdeb" alt="Workshop fabrication and repair work" loading="lazy" width="400" height="280" decoding="async">
-        </div>
-      </div>
-    </section>
-    <!-- ===== CONTACT ===== -->
-    <section class="section contact" id="contact">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-tag">Reach Us / ബന്ധപ്പെടുക</span>
-          <h2 class="section-title">Visit Our Workshop</h2>
-          <p class="section-subtitle">Need lathe or reconditioning work? Bring your parts in or call us. We're here Monday–Saturday.</p>
+        <div class="section-head">
+          <p class="section-tag">Get In Touch / ബന്ധപ്പെടുക</p>
+          <h2>Visit Our Workshop in Iritty</h2>
+          <p>
+            Need vehicle component repair or lathe services? Contact us for expert service and consultation.
+          </p>
         </div>
 
-        <!-- Two info cards -->
         <div class="contact-grid">
           <div class="contact-card">
-            <div class="contact-card-icon">📞</div>
-            <h4>Phone / ഫോൺ</h4>
-            <p><a href="tel:+918075127142">+91 80751 27142</a></p>
-            <p><a href="tel:+919846858571">+91 98468 58571</a></p>
+            <h3>Phone / ഫോൺ</h3>
+            <p><a href="tel:+918075127142">+91 8075127142</a></p>
+            <p><a href="tel:+919847364682">+91 9847364682</a></p>
           </div>
+
           <div class="contact-card">
-            <div class="contact-card-icon">📍</div>
-            <h4>Location / സ്ഥലം</h4>
-            <p>Sharada Engineering Works<br>Iritty, Kannur, Kerala – 670703<br>India</p>
+            <h3>Location / സ്ഥലം</h3>
+            <p>Sharada Engineering Works</p>
+            <p>Iritty, Kannur</p>
+            <p>Kerala - 670703</p>
           </div>
         </div>
 
-        <!-- CTA buttons -->
-        <div class="contact-cta-row">
-          <a href="tel:+918075127142" class="btn btn-primary">📞 Call Now</a>
-          <a href="https://wa.me/918075127142?text=Hello%2C%20I%20need%20information%20about%20your%20engineering%20services."
-             class="btn btn-whatsapp"
-             target="_blank"
-             rel="noopener noreferrer">💬 Chat on WhatsApp</a>
-          <a href="https://maps.google.com/?q=Sharada+Engineering+Works+Iritty" class="btn btn-outline" target="_blank" rel="noopener noreferrer">📍 Get Directions</a>
+        <div class="contact-actions">
+          <a class="btn btn-orange" href="tel:+918075127142">Call Now</a>
+          <a class="btn btn-green" href="https://wa.me/918075127142" target="_blank">WhatsApp</a>
         </div>
-
-        <!-- Working hours note -->
-        <p style="text-align:center; color: var(--color-grey); font-size: 0.9rem; margin-bottom: 3rem;">
-          🕐 &nbsp;Mon – Sat: 8:00 AM – 6:00 PM &nbsp;|&nbsp; Sunday: Closed
-        </p>
-
-        <!-- Map -->
-        <div class="contact-map">
-          <iframe
-            title="Sharada Engineering Works – Iritty, Kannur"
-            src="https://maps.google.com/maps?q=Sharada+Engineering+Works+Iritty&output=embed"
-            width="100%"
-            height="400"
-            style="border:0; border-radius: 12px;"
-            allowfullscreen=""
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade">
-          </iframe>
-        </div>
-
       </div>
     </section>
-
   </main>
 
-  <!-- ===== FOOTER ===== -->
   <footer class="site-footer">
-    <div class="container">
-      <div class="footer-row">
-        <div class="footer-brand">
-          <a href="#home" class="logo">
-            <span class="logo-icon">⚙</span>
-            <span class="logo-text">Sharada Engineering<br><small>Works</small></span>
-          </a>
-          <p class="footer-tagline">Specialised Lathe &amp; Machining Works<br>Iritty, Kannur, Kerala</p>
-        </div>
-        <nav class="footer-links-row" aria-label="Footer navigation">
-          <a href="#home">Home</a>
-          <a href="#about">About</a>
-          <a href="#services">Services</a>
-          <a href="#machines">Machines</a>
-          <a href="#gallery">Gallery</a>
-          <a href="#contact">Contact</a>
-        </nav>
-        <div>
-          <a href="https://wa.me/918075127142" class="footer-whatsapp" target="_blank" rel="noopener noreferrer">💬 WhatsApp Us</a>
-        </div>
+    <div class="container footer-wrap">
+      <div>
+        <h3>Sharada Engineering Works</h3>
+        <p>Iritty, Kannur, Kerala</p>
       </div>
-      <div class="footer-bottom">
-        <p>&copy; <span id="footer-year"></span> Sharada Engineering Works. All rights reserved.</p>
-        <p class="footer-seo">Lathe Works Iritty | Lathe Machining Kannur | Shaft Repair Iritty | Bush Fitting Kerala</p>
-      </div>
+      <p>© 2024 Sharada Engineering Works. All rights reserved.</p>
     </div>
   </footer>
 
-  <!-- Back to Top Button -->
-  <button class="back-to-top" id="back-to-top" aria-label="Back to top">↑</button>
-
-  <!-- Floating WhatsApp Button -->
-  <a href="https://wa.me/918075127142" class="floating-whatsapp" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
-    💬
+  <a
+    class="floating-whatsapp"
+    href="https://wa.me/918075127142"
+    target="_blank"
+    aria-label="Chat on WhatsApp"
+  >
+    WA
   </a>
+
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" id="closeLightbox">&times;</button>
+    <img src="images/workshop-main.jpg" alt="Workshop full image" id="lightboxImage" />
+  </div>
 
   <script src="js/main.js"></script>
 </body>
